@@ -1,0 +1,93 @@
+[
+  {
+    "productId": "9253",
+    "productName": "Café Peruano Premium",
+    "brand": "Marca Águila",
+    "categories": ["/Abarrotes/Café/"],
+    "link": "https://www.plazavea.com.pe/cafe-peruano-premium/p",
+    "items": [
+      {
+        "itemId": "9357",
+        "name": "Café Peruano Premium 250 g",
+        "images": [
+          {
+            "imageUrl": "https://plazavea.vteximg.com.br/arquivos/ids/1/cafe.jpg"
+          }
+        ],
+        "sellers": [
+          {
+            "sellerId": "1",
+            "sellerName": "Plaza Vea",
+            "addToCartLink": "/checkout/cart/add?sku=9357&qty=1&seller=1&sc=1",
+            "commertialOffer": {
+              "Price": 12.4,
+              "ListPrice": 15.9,
+              "AvailableQuantity": 9,
+              "IsAvailable": true
+            }
+          },
+          {
+            "sellerId": "marketplace",
+            "sellerName": "Seller Marketplace",
+            "addToCartLink": "/checkout/cart/add?sku=9357&qty=1&seller=marketplace&sc=1",
+            "commertialOffer": {
+              "Price": 13.1,
+              "ListPrice": 13.1,
+              "AvailableQuantity": 5,
+              "IsAvailable": true
+            }
+          }
+        ]
+      },
+      {
+        "itemId": "9358",
+        "name": "Café Peruano Premium 500 g",
+        "images": [],
+        "sellers": [
+          {
+            "sellerId": "1",
+            "sellerName": "Plaza Vea",
+            "addToCartLink": "/checkout/cart/add?sku=9358&qty=1&seller=1&sc=1",
+            "commertialOffer": {
+              "Price": 0,
+              "ListPrice": 25,
+              "AvailableQuantity": 0,
+              "IsAvailable": false
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "productId": "200",
+    "productName": "Café Económico",
+    "brand": "Marca Águila",
+    "categories": ["/Abarrotes/Café/"],
+    "link": "/cafe-economico/p",
+    "items": [
+      {
+        "itemId": "201",
+        "name": "Café Económico 100 g",
+        "images": [
+          {
+            "imageUrl": "https://plazavea.vteximg.com.br/arquivos/ids/2/economico.jpg"
+          }
+        ],
+        "sellers": [
+          {
+            "sellerId": "1",
+            "sellerName": "Plaza Vea",
+            "addToCartLink": "/checkout/cart/add?sku=201&qty=1&seller=1&sc=1",
+            "commertialOffer": {
+              "Price": 5.55,
+              "ListPrice": 6,
+              "AvailableQuantity": 4,
+              "IsAvailable": true
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

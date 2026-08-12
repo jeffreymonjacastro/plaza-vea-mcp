@@ -1,0 +1,57 @@
+[build-system]
+requires = ["hatchling>=1.27"]
+build-backend = "hatchling.build"
+
+[project]
+name = "plaza-vea-mcp"
+version = "0.1.0"
+description = "Servidor MCP local para consultar el catalogo publico de Plaza Vea mediante VTEX y Scrapy."
+readme = "README.md"
+requires-python = ">=3.12,<3.14"
+license = { file = "LICENSE" }
+authors = [{ name = "Jeffrey Monja Castro" }]
+dependencies = [
+  "httpx>=0.28.1,<1",
+  "mcp==1.12.4",
+  "pillow>=11.3,<13",
+  "pydantic>=2.11,<3",
+  "scrapy>=2.13,<3",
+  "sqlalchemy>=2.0.43,<3",
+]
+
+[project.scripts]
+plaza-vea-mcp = "plaza_vea_mcp.server:main"
+
+[dependency-groups]
+dev = [
+  "mypy>=1.17,<2",
+  "pytest>=8.4,<10",
+  "pytest-asyncio>=1.1,<2",
+  "respx>=0.22,<1",
+  "ruff>=0.12,<1",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/plaza_vea_mcp"]
+
+[tool.pytest.ini_options]
+addopts = "-ra"
+testpaths = ["tests"]
+asyncio_mode = "auto"
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM", "RUF"]
+
+[tool.mypy]
+python_version = "3.12"
+strict = true
+packages = ["plaza_vea_mcp"]
+plugins = ["pydantic.mypy"]
+
+[[tool.mypy.overrides]]
+module = ["scrapy.*"]
+ignore_missing_imports = true
