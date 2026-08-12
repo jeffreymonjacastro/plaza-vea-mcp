@@ -34,9 +34,11 @@ class RefreshManager:
         if category_id:
             command.extend(["--category-id", category_id])
         log_path = self.settings.data_dir / "logs" / f"crawl-{run_id}.log"
-        creation_flags = 0
+        creation_flags: int = 0
         if os.name == "nt":
-            creation_flags = subprocess.CREATE_NO_WINDOW | subprocess.CREATE_NEW_PROCESS_GROUP
+            creation_flags = int(getattr(subprocess, "CREATE_NO_WINDOW", 0)) | int(
+                getattr(subprocess, "CREATE_NEW_PROCESS_GROUP", 0)
+            )
         try:
             with log_path.open("ab") as log_file:
                 process = subprocess.Popen(
