@@ -18,7 +18,7 @@ Incluye un crawler Scrapy opcional que mantiene un cache SQLite y un historial l
 - Extraccion de todos los SKUs y sellers de cada producto.
 - Filtros por nombre parcial y marca exacta, tolerantes a mayusculas y acentos.
 - Ordenamiento por precio ascendente, descendente o nombre.
-- Imagenes PNG como `ImageContent`, visibles en clientes MCP compatibles.
+- Imagenes PNG como `ImageContent` para vision del modelo y Markdown para mostrarlas al usuario.
 - Enlaces individuales y combinados para agregar productos al carrito.
 - Crawler Scrapy respetuoso con `robots.txt`, AutoThrottle, cache HTTP y reintentos.
 - Sin Selenium, credenciales, CAPTCHA ni automatizacion del pago.
@@ -53,7 +53,7 @@ Reinicia o abre una nueva tarea de Codex para que las tools aparezcan en la sesi
 | `search_products` | Filtra por nombre y marca y ordena por precio o nombre. |
 | `get_product` | Devuelve todas las variantes, sellers, ofertas e imagenes. |
 | `list_brands` | Lista marcas activas, opcionalmente por prefijo. |
-| `get_product_image` | Devuelve una imagen como contenido MCP `image/png`. |
+| `get_product_image` | Devuelve `ImageContent` PNG y el Markdown necesario para mostrar la imagen en la respuesta. |
 | `build_cart_links` | Valida SKUs y genera enlaces para continuar en Plaza Vea. |
 | `start_catalog_refresh` | Inicia el crawler local en segundo plano. |
 | `get_catalog_refresh_status` | Consulta el progreso y resultado del crawler. |

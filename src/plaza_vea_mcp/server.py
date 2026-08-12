@@ -124,7 +124,8 @@ async def list_tools() -> list[types.Tool]:
             title="Mostrar imagen de producto",
             description=(
                 "Descarga una imagen publica de un SKU y la devuelve como ImageContent PNG para "
-                "mostrarla directamente en clientes MCP compatibles como Codex."
+                "vision del modelo. Para hacerla visible al usuario en Codex, copia tambien en "
+                "la respuesta final el Markdown de imagen incluido en TextContent."
             ),
             inputSchema=_schema(GetProductImageInput),
             outputSchema=_schema(ProductImageOutput),
@@ -197,7 +198,9 @@ async def call_tool(name: str, arguments: dict[str, Any]) -> Any:
                 type="text",
                 text=(
                     f"Imagen {metadata.image_index} de {metadata.product_name} "
-                    f"(SKU {metadata.sku_id}, {metadata.width}x{metadata.height})."
+                    f"(SKU {metadata.sku_id}, {metadata.width}x{metadata.height}).\n"
+                    "Para que el usuario la vea, incluye literalmente este Markdown en tu "
+                    f"respuesta final:\n![{metadata.product_name}]({metadata.source_url})"
                 ),
             ),
             types.ImageContent(type="image", data=image_base64, mimeType="image/png"),
