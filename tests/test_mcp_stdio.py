@@ -7,6 +7,20 @@ from pathlib import Path
 import pytest
 from mcp import ClientSession, StdioServerParameters
 from mcp.client.stdio import stdio_client
+from pydantic import BaseModel
+
+from plaza_vea_mcp.server import _result_content
+
+
+class ExampleResult(BaseModel):
+    value: int
+
+
+def test_result_content_avoids_client_incompatible_content_annotations() -> None:
+    content, structured = _result_content("Resultado", ExampleResult(value=1))
+
+    assert structured == {"value": 1}
+    assert all(block.annotations is None for block in content)
 
 
 @pytest.mark.asyncio

@@ -239,7 +239,6 @@ def _result_content(
         types.TextContent(
             type="text",
             text=json.dumps(structured, ensure_ascii=False, indent=2),
-            annotations=types.Annotations(audience=["user"], priority=0.5),
         ),
     ], structured
 
